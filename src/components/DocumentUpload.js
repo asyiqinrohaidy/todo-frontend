@@ -72,7 +72,7 @@ function DocumentUpload({ onTasksCreated }) {
 
     return (
         <div style={styles.container}>
-            <h3 style={styles.title}>📄 Document Analyzer</h3>
+            <h3 style={styles.title}>Document Analyzer</h3>
             <p style={styles.subtitle}>Upload a document and AI will extract tasks automatically!</p>
 
             {/* Dropzone */}
@@ -91,10 +91,10 @@ function DocumentUpload({ onTasksCreated }) {
                         <p>Analyzing document...</p>
                     </div>
                 ) : isDragActive ? (
-                    <p style={styles.dropText}>📂 Drop the file here...</p>
+                    <p style={styles.dropText}>Drop the file here...</p>
                 ) : (
                     <div style={styles.dropContent}>
-                        <p style={styles.dropText}>🎯 Drag & drop a document here</p>
+                        <p style={styles.dropText}>Drag & drop a document here</p>
                         <p style={styles.dropHint}>or click to browse</p>
                         <p style={styles.acceptedFiles}>
                             Accepted: PDF, Word, Text, Images (max 10MB)
@@ -106,7 +106,7 @@ function DocumentUpload({ onTasksCreated }) {
             {/* Error Display */}
             {error && (
                 <div style={styles.error}>
-                    ❌ {error}
+                    {error}
                 </div>
             )}
 
@@ -114,7 +114,7 @@ function DocumentUpload({ onTasksCreated }) {
             {result && (
                 <div style={styles.results}>
                     <div style={styles.resultHeader}>
-                        <h4 style={styles.resultTitle}>✅ Analysis Complete!</h4>
+                        <h4 style={styles.resultTitle}>Analysis Complete!</h4>
                         <span style={styles.taskCount}>
                             {result.count} task{result.count !== 1 ? 's' : ''} created
                         </span>
@@ -131,7 +131,7 @@ function DocumentUpload({ onTasksCreated }) {
                     {result.extracted_text && (
                         <details style={styles.details}>
                             <summary style={styles.detailsSummary}>
-                                📝 View extracted text
+                                View extracted text
                             </summary>
                             <div style={styles.extractedText}>
                                 {result.extracted_text}
@@ -163,7 +163,7 @@ function DocumentUpload({ onTasksCreated }) {
                                         )}
                                         {task.deadline && (
                                             <span style={styles.deadline}>
-                                                📅 {task.deadline}
+                                                {task.deadline}
                                             </span>
                                         )}
                                     </div>

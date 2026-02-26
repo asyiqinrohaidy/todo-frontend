@@ -109,7 +109,7 @@ function MultiAgent({ onTasksCreated }) {
 
             {result && (
                 <div style={styles.results}>
-                    <h4 style={styles.resultsTitle}>✅ Multi-Agent Analysis Complete!</h4>
+                    <h4 style={styles.resultsTitle}>Multi-Agent Analysis Complete!</h4>
 
                     {/* Agent Conversation */}
                     <div style={styles.conversation}>
@@ -130,14 +130,14 @@ function MultiAgent({ onTasksCreated }) {
 
                     {/* Executive Summary */}
                     <div style={styles.summary}>
-                        <h5 style={styles.sectionTitle}>📋 Executive Summary:</h5>
+                        <h5 style={styles.sectionTitle}>Executive Summary:</h5>
                         <p>{result.final_plan.executive_summary}</p>
                     </div>
 
                     {/* Tasks Created */}
                     <div style={styles.tasksCreated}>
                         <h5 style={styles.sectionTitle}>
-                            ✨ {result.tasks_created.length} Tasks Created:
+                            {result.tasks_created.length} Tasks Created:
                         </h5>
                         {result.tasks_created.map((task, index) => (
                             <div key={task.id} style={styles.taskItem}>
@@ -163,7 +163,7 @@ function MultiAgent({ onTasksCreated }) {
                     {/* Next Steps */}
                     {result.final_plan.next_steps && (
                         <div style={styles.nextSteps}>
-                            <h5 style={styles.sectionTitle}>🎯 Next Steps:</h5>
+                            <h5 style={styles.sectionTitle}>Next Steps:</h5>
                             <ul style={styles.stepsList}>
                                 {result.final_plan.next_steps.map((step, index) => (
                                     <li key={index}>{step}</li>
@@ -175,7 +175,7 @@ function MultiAgent({ onTasksCreated }) {
                     {/* Key Insights */}
                     {result.final_plan.key_insights && (
                         <div style={styles.insights}>
-                            <h5 style={styles.sectionTitle}>💡 Key Insights:</h5>
+                            <h5 style={styles.sectionTitle}>Key Insights:</h5>
                             <ul style={styles.insightsList}>
                                 {result.final_plan.key_insights.map((insight, index) => (
                                     <li key={index}>{insight}</li>
