@@ -164,7 +164,7 @@ See [API Documentation](https://github.com/asyiqinrohaidy/todo-api) for details.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. :)
 
 ## License
 
@@ -175,7 +175,7 @@ This project is licensed under the MIT License.
 **Asyiqin Rohaidy** - AI Engineer at Fulkrum Interactive
 
 - GitHub: [@asyiqinrohaidy](https://github.com/asyiqinrohaidy)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/asyiqinrohaidy)
+- LinkedIn: [@asyiqinrohaidy](https://linkedin.com/in/asyiqinrohaidy)
 
 ## Acknowledgments
 
