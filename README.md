@@ -104,7 +104,7 @@ The app will open at [http://localhost:3000](http://localhost:3000)
 1. Ask: "Help me plan [big goal]"
 2. 4 AI agents collaborate:
    - **Planner** - Breaks down the goal
-   - **Executor** - Analyzes feasibility
+   - **Executor** - Analyses feasibility
    - **Reviewer** - Quality checks
    - **Coordinator** - Creates final plan
 3. Tasks are created automatically
@@ -137,7 +137,7 @@ The frontend communicates with the Laravel backend via REST API:
 - **Authentication:** `POST /api/login`, `POST /api/register`
 - **Tasks:** `GET /api/tasks`, `POST /api/tasks`, `PUT /api/tasks/{id}`
 - **AI Chat:** `POST /api/ai/chat`
-- **Document Analysis:** `POST /api/documents/analyze`
+- **Document Analysis:** `POST /api/documents/analyse`
 - **Multi-Agent:** `POST /api/multi-agent/process`
 
 See [API Documentation](https://github.com/asyiqinrohaidy/todo-api) for details.
