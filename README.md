@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# AI-Powered Task Manager - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based frontend for an intelligent task management system with AI assistant, voice control, and document analysis.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18-blue)
+![AI](https://img.shields.io/badge/AI-OpenAI-green)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Core Task Management
+- Create, read, update, and delete tasks
+- Due date tracking with overdue indicators
+- Priority levels (High/Medium/Low) with color coding
+- Time estimation tracking
+- Task completion status
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### AI-Powered Features
+- **Conversational AI Assistant** - Natural language task management
+- **Voice Interface** - Hands-free control with speech recognition
+- **Text-to-Speech** - AI reads responses aloud
+- **Document Analysis** - Extract tasks from PDFs, images, and Word docs
+- **Multi-Agent System** - 4 AI agents collaborate to break down complex goals
+- **Smart Priority Detection** - Auto-assigns priority based on urgency
+- **Time Estimation** - AI predicts task completion time
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Experience
+- Floating chat interface (modern UX)
+- Responsive, mobile-friendly design
+- Secure authentication with OAuth2
+- Real-time updates
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Framework:** React 18 (Hooks, Functional Components)
+- **HTTP Client:** Axios
+- **Voice AI:** Web Speech API
+- **File Upload:** React Dropzone
+- **Authentication:** JWT Tokens
+- **Styling:** Custom CSS with modern design
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js 16+ and npm
+- Backend API running (see [todo-api](https://github.com/asyiqinrohaidy/todo-api))
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository:**
+```bash
+git clone https://github.com/asyiqinrohaidy/todo-frontend.git
+cd todo-frontend
+```
 
-### `npm run eject`
+2. **Install dependencies:**
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Configure API endpoint:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The frontend connects to `http://127.0.0.1:8000/api` by default (configured in `src/services/api.js`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To change the API URL, update:
+```javascript
+// src/services/api.js
+const API_URL = 'http://127.0.0.1:8000/api'; // Change this if needed
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Start the development server:**
+```bash
+npm start
+```
 
-## Learn More
+The app will open at [http://localhost:3000](http://localhost:3000)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Basic Task Management
+1. **Register/Login** to create an account
+2. **Add tasks** using the form or voice command
+3. **Set priorities** and due dates
+4. **Complete tasks** by clicking the checkbox
 
-### Code Splitting
+### AI Assistant
+1. Click the 💬 **chat button** (bottom right)
+2. Type or speak commands like:
+   - "Add a task to buy groceries tomorrow"
+   - "List all my high priority tasks"
+   - "Delete all completed tasks"
+   - "What should I do first to launch a mobile app?"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Voice Control
+1. Click the 🎤 **microphone icon**
+2. Speak your command
+3. AI responds with text and voice
 
-### Analyzing the Bundle Size
+### Document Analysis
+1. Click **"Upload Document"**
+2. Drag & drop a PDF, image, or Word file
+3. AI extracts tasks automatically
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Multi-Agent Planning
+1. Ask: "Help me plan [big goal]"
+2. 4 AI agents collaborate:
+   - **Planner** - Breaks down the goal
+   - **Executor** - Analyzes feasibility
+   - **Reviewer** - Quality checks
+   - **Coordinator** - Creates final plan
+3. Tasks are created automatically
 
-### Making a Progressive Web App
+## Project Structure
+```
+todo-frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── AIChat.js          # Conversational AI assistant
+│   │   ├── MultiAgent.js      # Multi-agent system UI
+│   │   └── DocumentUpload.js  # OCR document parser
+│   ├── pages/
+│   │   ├── Login.js           # Authentication
+│   │   ├── Register.js        # User registration
+│   │   └── Dashboard.js       # Main task interface
+│   ├── services/
+│   │   └── api.js             # Axios API client
+│   ├── App.js
+│   └── index.js
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## API Integration
 
-### Advanced Configuration
+The frontend communicates with the Laravel backend via REST API:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Authentication:** `POST /api/login`, `POST /api/register`
+- **Tasks:** `GET /api/tasks`, `POST /api/tasks`, `PUT /api/tasks/{id}`
+- **AI Chat:** `POST /api/ai/chat`
+- **Document Analysis:** `POST /api/documents/analyze`
+- **Multi-Agent:** `POST /api/multi-agent/process`
 
-### Deployment
+See [API Documentation](https://github.com/asyiqinrohaidy/todo-api) for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Screenshots
 
-### `npm run build` fails to minify
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### AI Chat Assistant
+![AI Chat](screenshots/ai-chat.png)
+
+### Multi-Agent Planning
+![Multi-Agent](screenshots/multi-agent.png)
+
+## Roadmap
+
+- [ ] Dark mode toggle
+- [ ] Task categories and tags
+- [ ] Calendar view
+- [ ] Recurring tasks
+- [ ] Task sharing and collaboration
+- [ ] Mobile app (React Native)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+**Asyiqin Rohaidy** - AI Engineer at Fulkrum Interactive
+
+- GitHub: [@asyiqinrohaidy](https://github.com/asyiqinrohaidy)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/asyiqinrohaidy)
+
+## Acknowledgments
+
+- OpenAI for GPT-4o-mini API
+- React community for amazing libraries
+- Web Speech API for voice capabilities
