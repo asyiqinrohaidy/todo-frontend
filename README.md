@@ -1,4 +1,4 @@
-# AI-Powered Task Manager - Frontend
+# Athena - Frontend
 
 React-based frontend for an intelligent task management system with AI assistant, voice control, and document analysis.
 
