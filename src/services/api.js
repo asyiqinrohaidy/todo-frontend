@@ -56,7 +56,7 @@ export const tasksAPI = {
 // Add AI API calls
 export const aiAPI = {
     chat: (data) => api.post('/ai/chat', data),
-    analyzeTask: (data) => api.post('/ai/analyze-task', data)
+    analyzeTask: (data) => api.post('/ai/analyze', data)
 };
 
 export default api;

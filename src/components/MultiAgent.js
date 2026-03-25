@@ -94,7 +94,8 @@ function MultiAgent({ onTasksCreated }) {
                     disabled={loading || !goal.trim()}
                     style={{
                         ...styles.submitButton,
-                        opacity: (loading || !goal.trim()) ? 0.6 : 1
+                        opacity: (loading || !goal.trim()) ? 0.6 : 1,
+                        cursor: (loading || !goal.trim()) ? 'not-allowed' : 'pointer'
                     }}
                 >
                     {loading ? 'Agents Working...' : 'Process with Multi-Agent System'}
@@ -200,17 +201,19 @@ const styles = {
     container: {
         backgroundColor: 'white',
         padding: '25px',
-        borderRadius: '8px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-        marginBottom: '30px'
+        borderRadius: '16px',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+        marginBottom: '24px'
     },
     title: {
         margin: '0 0 5px 0',
-        color: '#333'
+        color: '#111827',
+        fontSize: '20px',
+        fontWeight: '700'
     },
     subtitle: {
         margin: '0 0 20px 0',
-        color: '#666',
+        color: '#6b7280',
         fontSize: '14px'
     },
     form: {
@@ -221,66 +224,74 @@ const styles = {
     },
     label: {
         display: 'block',
-        marginBottom: '5px',
-        fontWeight: '500',
-        fontSize: '14px',
-        color: '#333'
+        marginBottom: '8px',
+        fontWeight: '600',
+        fontSize: '13px',
+        color: '#374151'
     },
     input: {
         width: '100%',
-        padding: '12px',
-        border: '1px solid #ddd',
-        borderRadius: '6px',
+        padding: '12px 14px',
+        border: '2px solid #e5e7eb',
+        borderRadius: '10px',
         fontSize: '14px',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        fontFamily: 'inherit',
+        outline: 'none',
+        transition: 'border-color 0.2s'
     },
     textarea: {
         width: '100%',
-        padding: '12px',
-        border: '1px solid #ddd',
-        borderRadius: '6px',
+        padding: '12px 14px',
+        border: '2px solid #e5e7eb',
+        borderRadius: '10px',
         fontSize: '14px',
         fontFamily: 'inherit',
         boxSizing: 'border-box',
-        resize: 'vertical'
+        resize: 'vertical',
+        outline: 'none',
+        transition: 'border-color 0.2s'
     },
     submitButton: {
         width: '100%',
-        padding: '14px',
-        backgroundColor: '#007bff',
+        padding: '14px 24px',
+        background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
         color: 'white',
         border: 'none',
-        borderRadius: '6px',
-        fontSize: '16px',
+        borderRadius: '10px',
+        fontSize: '15px',
         fontWeight: '600',
         cursor: 'pointer',
-        transition: 'background-color 0.2s'
+        boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+        transition: 'transform 0.2s, box-shadow 0.2s'
     },
     error: {
-        backgroundColor: '#fee',
-        color: '#c33',
+        backgroundColor: '#fee2e2',
+        color: '#991b1b',
         padding: '15px',
-        borderRadius: '6px',
+        borderRadius: '10px',
         marginTop: '15px',
-        fontSize: '14px'
+        fontSize: '14px',
+        border: '1px solid #fecaca'
     },
     results: {
         marginTop: '20px',
         padding: '20px',
         backgroundColor: '#f8f9fa',
-        borderRadius: '8px',
-        border: '1px solid #dee2e6'
+        borderRadius: '12px',
+        border: '1px solid #e5e7eb'
     },
     resultsTitle: {
         margin: '0 0 20px 0',
-        color: '#28a745',
-        fontSize: '18px'
+        color: '#111827',
+        fontSize: '18px',
+        fontWeight: '700'
     },
     sectionTitle: {
         margin: '0 0 12px 0',
         fontSize: '14px',
         fontWeight: '600',
-        color: '#495057'
+        color: '#374151'
     },
     conversation: {
         marginBottom: '20px'
@@ -288,9 +299,10 @@ const styles = {
     agentCard: {
         backgroundColor: 'white',
         padding: '15px',
-        borderRadius: '8px',
+        borderRadius: '10px',
         marginBottom: '10px',
-        border: '1px solid #e9ecef'
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
     },
     agentHeader: {
         display: 'flex',
@@ -304,24 +316,25 @@ const styles = {
     agentName: {
         fontWeight: '600',
         fontSize: '14px',
-        color: '#212529'
+        color: '#111827'
     },
     agentRole: {
         fontSize: '12px',
-        color: '#6c757d'
+        color: '#6b7280'
     },
     agentSummary: {
         fontSize: '13px',
-        color: '#495057',
+        color: '#374151',
         lineHeight: '1.5'
     },
     summary: {
-        backgroundColor: '#e7f3ff',
+        background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
         padding: '15px',
-        borderRadius: '6px',
+        borderRadius: '10px',
         marginBottom: '20px',
         fontSize: '14px',
-        lineHeight: '1.6'
+        lineHeight: '1.6',
+        border: '1px solid #bfdbfe'
     },
     tasksCreated: {
         marginBottom: '20px'
@@ -331,14 +344,16 @@ const styles = {
         gap: '12px',
         backgroundColor: 'white',
         padding: '12px',
-        borderRadius: '6px',
+        borderRadius: '10px',
         marginBottom: '8px',
-        alignItems: 'start'
+        alignItems: 'start',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.04)'
     },
     taskNumber: {
         width: '24px',
         height: '24px',
-        backgroundColor: '#007bff',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
         borderRadius: '50%',
         display: 'flex',
@@ -354,7 +369,7 @@ const styles = {
     taskTitle: {
         fontSize: '14px',
         fontWeight: '500',
-        color: '#212529',
+        color: '#111827',
         marginBottom: '6px'
     },
     taskMeta: {
@@ -366,59 +381,67 @@ const styles = {
         fontSize: '11px',
         padding: '2px 8px',
         borderRadius: '10px',
-        fontWeight: '500',
-        textTransform: 'uppercase'
+        fontWeight: '700',
+        textTransform: 'uppercase',
+        letterSpacing: '0.5px'
     },
     priorityHigh: {
-        backgroundColor: '#fee',
-        color: '#c33'
+        backgroundColor: '#fef2f2',
+        color: '#991b1b'
     },
     priorityMedium: {
-        backgroundColor: '#fff3cd',
-        color: '#856404'
+        backgroundColor: '#eff6ff',
+        color: '#1e40af'
     },
     priorityLow: {
-        backgroundColor: '#e7f3ff',
-        color: '#004085'
+        backgroundColor: '#f0fdf4',
+        color: '#166534'
     },
     phase: {
         fontSize: '12px',
-        color: '#6c757d'
+        color: '#6b7280'
     },
     nextSteps: {
-        backgroundColor: '#fff3cd',
+        backgroundColor: '#fffbeb',
         padding: '15px',
-        borderRadius: '6px',
-        marginBottom: '15px'
+        borderRadius: '10px',
+        marginBottom: '15px',
+        border: '1px solid #fde68a'
     },
     stepsList: {
         margin: '8px 0 0 20px',
         padding: 0,
         fontSize: '14px',
-        lineHeight: '1.8'
+        lineHeight: '1.8',
+        color: '#374151'
     },
     insights: {
-        backgroundColor: '#d4edda',
+        backgroundColor: '#f0fdf4',
         padding: '15px',
-        borderRadius: '6px',
-        marginBottom: '15px'
+        borderRadius: '10px',
+        marginBottom: '15px',
+        border: '1px solid #bbf7d0'
     },
     insightsList: {
         margin: '8px 0 0 20px',
         padding: 0,
         fontSize: '14px',
-        lineHeight: '1.8'
+        lineHeight: '1.8',
+        color: '#374151'
     },
     closeButton: {
         width: '100%',
-        padding: '12px',
-        backgroundColor: '#007bff',
+        padding: '14px 24px',
+        background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)', // ✅ ORANGE
         color: 'white',
         border: 'none',
-        borderRadius: '6px',
+        borderRadius: '10px',
         cursor: 'pointer',
-        fontWeight: '500',
-        marginTop: '10px'
+        fontWeight: '600',
+        fontSize: '15px',
+        marginTop: '10px',
+        boxShadow: '0 4px 12px rgba(249, 115, 22, 0.4)', // ✅ ORANGE SHADOW
+        transition: 'transform 0.2s, box-shadow 0.2s'
     }
 };
 
